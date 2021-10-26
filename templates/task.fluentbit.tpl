@@ -9,13 +9,14 @@ task "${NAME}" {
   resources {
     cpu = ${CPU}
     memory = ${RAM}
+    memory_max = ${RAM_MAX}
   }
 
   config {
     image = "${IMAGE}"
     command = "/fluent-bit/bin/fluent-bit"
     args = ["-c","/local/fluent-bit.conf"]
-    memory_hard_limit = 64 # Kill container
+    memory_hard_limit = ${RAM_MAX}
   }
 
   template {

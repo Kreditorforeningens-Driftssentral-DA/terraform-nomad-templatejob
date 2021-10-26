@@ -9,5 +9,6 @@ task "${NAME}" {
   resources {
     cpu = ${CPU}
     memory = ${RAM}
+    memory_max = ${RAM_MAX}
   }
 }
